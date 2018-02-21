@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 // import Book from '../Book/Book';
 import './Body.css';
 import { getBooks } from '../../Redux/Actions';
+import Book from '../Book/Book';
 
 // const arr = ['Book-one', 'Book-two'];
 
@@ -29,22 +30,28 @@ class Body extends React.Component {
         // console.log('pari', data);
 
         this.props.getBooksFromDB(data);
-        const keys = Object.keys(data);
-        // console.log('keys', keys);
-        this.setState({
-          authorValue: keys,
-        });
-        const groups = {};
-        console.log('av', this.state.authorValue);
         console.log('pari', data);
-        this.state.authorValue.map((author) => {
-          groups.author = Object.values(data);
-        });
-        // console.log('hello', groups);
         this.setState({
-          group: groups,
+          group: data,
         });
-        console.log('hello', this.state.group);
+        console.log('now', this.state.group);
+
+        // const keys = Object.keys(data);
+        // // console.log('keys', keys);
+        // this.setState({
+        //   authorValue: keys,
+        // });
+        // const groups = {};
+        // console.log('av', this.state.authorValue);
+        // console.log('pari', data);
+        // this.state.authorValue.map((author) => {
+        //   groups.author = Object.values(data);
+        // });
+        // // console.log('hello', groups);
+        // this.setState({
+        //   group: groups,
+        // });
+        // console.log('hello', this.state.group);
         // this.state.authorValue.push(keys);
         // keys.map((key) => {
         //   const { bookid } = data[key];
@@ -57,7 +64,8 @@ class Body extends React.Component {
       });
   }
   render() {
-    const authors = this.state.authorValue.map((author) => author);
+    const authors = Object.keys(this.state.group)[0];
+      <br />;
     // const authors = this.state.group.keys.map(sutho => <option key={book.author} value={book.author}>{book.author}</option>);
     // const filter = (filterValue) => {
     //   let filteredDiv;
@@ -72,15 +80,15 @@ class Body extends React.Component {
     //   }
     //   return filteredDiv;
     // };
-    return (
-      <div className="Body-div">
-        <div>
-          Hello
-          {authors}
+      return (
+        <div className="Body-div">
+          <div>
+            {authors}
+          </div>
+          <Book />
+          {/* {filter(this.state.authorValue)} */}
         </div>
-        {/* {filter(this.state.authorValue)} */}
-      </div>
-    );
+      );
   }
 }
 
