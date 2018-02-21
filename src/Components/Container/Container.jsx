@@ -3,14 +3,19 @@ import PropTypes from 'prop-types';
 // import { connect } from 'react-redux';
 import './Container.css';
 import Header from '../Header/Header';
+import SideBar from '../SideBar/SideBar';
+import Body from '../Body/Body';
 
 
 class Container extends React.Component {
   render() {
     return (
-      <div>
-        {/* <SideBar /> */}
-        <Header headerText="The Book Shelf" />
+      <div className="Container-div">
+        <SideBar />
+        <div className="Container-right">
+          <Header headerText="The Book Shelf" />
+          <Body />
+        </div>
       </div>
     );
   }

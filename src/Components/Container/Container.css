@@ -1,0 +1,8 @@
+.Container-div{
+    display: flex;
+    flex-direction: row; 
+}
+.Container-right{
+    display: flex;
+    flex-direction: column; 
+}

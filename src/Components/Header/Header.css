@@ -1,5 +1,5 @@
 .Header-head{
-    width:30%;
+    width:80%;
     height:40px;
     background-color: rgb(146,71,68);
     padding:30px;
@@ -7,7 +7,7 @@
     color:white;
     font-size: 30px;
     font-family: Helvetica;
-    border-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 body {
